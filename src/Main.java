@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 public class Main {
     //      mkdir /home/anonymous/Games
-    private static String BASEDIR = "/home/anonymous/Games/";
+    private static final String BASEDIR = "/home/anonymous/Games/";
     private static boolean FsObjectCreate(String name, FsObjectType type) {
         boolean result;
         File fsObject = new File(name);
@@ -42,7 +42,7 @@ public class Main {
         if (FsObjectCreate(tempPath, FsObjectType.FILE)) {
             log.add(new LogEntry(tempPath, true));
             StringBuilder sb = new StringBuilder();
-            log.forEach(le -> sb.append(le.toString() + '\n'));
+            log.forEach(le -> sb.append(le.toString()).append('\n'));
             String logText = sb.toString();
             try (FileWriter fw = new FileWriter(tempPath, true)) {
                 fw.write(logText);

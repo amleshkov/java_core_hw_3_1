@@ -2,9 +2,9 @@ import java.sql.Timestamp;
 import java.time.Instant;
 
 public class LogEntry {
-    private Timestamp timestamp;
-    private String file;
-    private boolean result;
+    private final Timestamp timestamp;
+    private final String file;
+    private final boolean result;
 
     public LogEntry(String file, boolean result) {
         this.timestamp = Timestamp.from(Instant.now());
